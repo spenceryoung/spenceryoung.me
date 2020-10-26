@@ -17,7 +17,7 @@
     const projects = new Vue({
         el: "#projectContainer",
         data: {
-            projectsArray: {}
+            projectsArray: []
         },
         created: function() {
             db.ref('projects').once('value', snapshot => {
@@ -29,7 +29,7 @@
     const employers = new Vue({
         el: '#experienceContainer',
         data: {
-            employersArray: {}
+            employersArray: []
         },
         created: function(){
             db.ref('employers').once('value', snapshot => {
