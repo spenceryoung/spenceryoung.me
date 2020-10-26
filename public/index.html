@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <title>Spencer Young</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+    <div id="backgroundParticles"></div>
+    <div class="container">
+        <header>
+            <h1 id="hidden">SPENCER YOUNG</h1>
+        </header>
+        <div class="container2">
+                <h2 class="title">OLD PROJECTS FROM SCHOOL</h2>
+                <div id="projectContainer" class="row">
+                    <div class="col" v-for="project in projectsArray">
+                        <div class="link-container">
+                            <a class="link" v-bind:href="project.href">{{project.project}}</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div id="experienceContainer" class="experience-container">
+            <h5 class="title title-white">PROFESSIONAL EXPERIENCE</h5>
+            <div class="row-container">
+                <div class="employer" v-for="employer in employersArray">
+                    <p>
+                        <div class="link-container">
+                            <a class="link" v-bind:href="employer.href" target="_blank"><span>{{employer.employer}}</span></a>
+                        </div>
+                        <br><br>
+                        <span>{{employer.city}}</span><br>
+                        <span>{{employer.position}}</span><br>
+                        <span>{{employer.timeframe}}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div class="social-networking-links">
+                    <a href="//github.com/SpencerYoung" target="_blank"><i class="fa fa-github-alt"></i></a>
+                    <a href="//www.linkedin.com/pub/spencer-young/b2/877/228" target="_blank"><i
+                            class="fa fa-linkedin"></i></a>
+                </div>
+                <div class="footer-tag">
+                    <a href="//github.com/spenceryoung/spenceryoung.github.io" target="_blank">source code</a>
+                    coded by Spencer Young
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
+    <script src="scripts/particles.min.js"></script> 
+    <script src="scripts/main.js"></script>
+</body>
+</html>

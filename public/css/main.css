@@ -1,0 +1,229 @@
+/*==========  CSS Reset  ==========*/
+
+html, body, div, span, h1, h2, h3,
+h4, h5, h6, p, ol, ul, li, article,
+aside, footer, header, nav, section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+h1 {
+    margin-top: 25px;
+    font-size: 21px;
+    text-align: center;
+    -webkit-animation: fadein 3s; 
+    -moz-animation: fadein 3s;
+    -ms-animation: fadein 3s;
+    -o-animation: fadein 3s;
+    animation: fadein 3s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#backgroundParticles {
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.container {
+    padding: 0 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/*==========  Header  ==========*/
+
+header {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+}
+
+h1 {
+    position: absolute;
+    top: 50%;
+    margin-top: -36.5px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 60px;
+}
+
+/*==========  Main Content  ==========*/
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
+}
+
+/* .max-width {
+    max-width: 1200px;
+    margin: auto;
+} */
+
+.container2 {    
+    position: relative;
+    background-color: #fff;
+    border-radius: 25px;
+}
+
+.container2::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    margin: auto;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 75px solid #000;
+}
+
+.title {
+    text-align: center;
+    font-size: 35px;
+    padding: 50px 12px;
+}
+
+.title-white {
+    color: #fff;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.col {
+    padding: 25px;
+    text-align: center;
+}
+
+.link-container {
+    border: 1px solid #000;
+    border-radius: 12px;
+    background-color: #fff;
+    color: #000;
+    padding: 0 5px;
+    transition: all .3s ease-in-out; 
+}
+
+.link-container:hover { 
+    background-color: #000;
+    color: #fff;
+    transition: all .2s ease-in-out;
+    cursor: pointer; 
+}
+
+.link {
+    text-decoration: none;
+    font-size: 35px;
+    color: inherit; 
+}
+
+.row-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+} 
+
+.employer {
+    padding: 50px 25px;
+    position: relative;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 25px;
+}
+
+#spaceContianer {
+    margin-top: 50px;
+}
+
+/* .employer:first-child {
+    margin-left: 0;
+}
+
+.employer:last-child {
+    margin-right: 0;
+} */
+
+/*==========  Footer  ==========*/
+
+footer {
+    padding: 25px 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+.footer-container {
+    margin: auto;
+    position: relative;
+}
+
+.footer-tag {
+    font-size: 14px;
+}
+
+.footer-tag a {
+    font-size: 14px;
+    text-decoration: none;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 5px;
+    margin-right: 5px;
+    transition: all .3s ease-in-out; 
+}
+
+.footer-tag a:hover { 
+    color: #000;
+    background-color: #fff;
+    transition: all .3s ease-in-out; 
+}
+
+.social-networking-links a {
+    color: #fff;
+    padding-right: 25px;
+    font-size: 18px;
+}
+
+.footer-tag {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
