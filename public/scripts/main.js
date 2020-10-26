@@ -11,35 +11,30 @@
         measurementId: "G-DKDTLEE8XP"
     };
     let app = firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
     let db = app.database();
+    let analytics = firebase.analytics();
     
     const projects = new Vue({
         el: "#projectContainer",
         data: {
-            projectsArray: []
+            projectsArray: {}
         },
-        created() {
-            this.projectsArray = getProjects();
+        created: function() {
+            db.ref('projects').once('value', snapshot => {
+                this.projectsArray = snapshot.val()
+            })
         }
     });
-    
+
     const employers = new Vue({
         el: '#experienceContainer',
         data: {
-            employersArray: []
+            employersArray: {}
         },
-        created() {
-            this.employersArray = getEmployers();
+        created: function(){
+            db.ref('employers').once('value', snapshot => {
+                this.employersArray= snapshot.val()
+            })
         }
     });
-
-    function getEmployers() {
-        return db.ref('employers').once('value').val();
-    }
-
-    function getProjects() {
-        let snapshot = db.ref('projects').once('value');
-        return snapshot.val();
-    }
 })();
