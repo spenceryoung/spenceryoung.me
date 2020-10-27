@@ -11,23 +11,23 @@
 </head>
 <body>
     <div id="backgroundParticles"></div>
-    <div class="container">
+    <div id="container">
         <header>
-            <h1 id="hidden">SPENCER YOUNG</h1>
+            <h1>SPENCER YOUNG</h1>
         </header>
-        <div class="container2">
-                <h2 class="title">OLD PROJECTS FROM SCHOOL</h2>
-                <div id="projectContainer" class="row">
-                    <div class="col" v-for="project in projectsArray">
-                        <div class="link-container">
-                            <a class="link" v-bind:href="project.href">{{project.project}}</a>
-                        </div>
+        <div class="triangle-card">
+            <h2 class="title">Technology Used In This App</h2>
+            <div id="technologiesContainer" class="row">
+                <div class="col" v-for="technology in technologiesArray">
+                    <div class="link-container">
+                        <a class="link" v-bind:href="technology.href" target="_blank">{{technology.technology}}</a>
                     </div>
                 </div>
+            </div>
         </div>
-        <div id="experienceContainer" class="experience-container">
+        <div class="no-background-container">
             <h5 class="title title-white">PROFESSIONAL EXPERIENCE</h5>
-            <div class="row-container">
+            <div id="experienceContainer" class="row-container">
                 <div class="employer" v-for="employer in employersArray">
                     <p>
                         <div class="link-container">
@@ -41,16 +41,24 @@
                 </div>
             </div>
         </div>
+        <div class="triangle-card">
+            <h2 class="title">OLD PROJECTS FROM SCHOOL</h2>
+            <div id="projectContainer" class="row">
+                <div class="col" v-for="project in projectsArray">
+                    <div class="link-container">
+                        <a class="link" v-bind:href="project.href" target="_blank">{{project.project}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <footer>
             <div class="footer-container">
                 <div class="social-networking-links">
                     <a href="//github.com/SpencerYoung" target="_blank"><i class="fa fa-github-alt"></i></a>
-                    <a href="//www.linkedin.com/pub/spencer-young/b2/877/228" target="_blank"><i
-                            class="fa fa-linkedin"></i></a>
+                    <a href="//www.linkedin.com/pub/spencer-young/b2/877/228" target="_blank"><i class="fa fa-linkedin"></i></a>
                 </div>
                 <div class="footer-tag">
-                    <a href="//github.com/spenceryoung/spenceryoung.me" target="_blank">source code</a>
-                    coded by Spencer Young
+                    <a href="//github.com/spenceryoung/spenceryoung.me" target="_blank">source code</a>coded by Spencer Young
                 </div>
             </div>
         </footer>

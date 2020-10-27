@@ -60,7 +60,7 @@ h1 {
     left: 0;
 }
 
-.container {
+#container {
     padding: 0 25px;
     max-width: 1200px;
     margin: auto;
@@ -86,31 +86,19 @@ h1 {
 
 /*==========  Main Content  ==========*/
 
+.no-background-container {
+    padding-bottom: 50px;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #000;
 }
 
-/* .max-width {
-    max-width: 1200px;
-    margin: auto;
-} */
-
-.container2 {    
+.triangle-card {    
     position: relative;
     background-color: #fff;
     border-radius: 25px;
-}
-
-.container2::before {
-    content: '';
-    display: block;
-    width: 0;
-    height: 0;
-    margin: auto;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-top: 75px solid #000;
 }
 
 .title {
@@ -173,14 +161,6 @@ body {
 #spaceContianer {
     margin-top: 50px;
 }
-
-/* .employer:first-child {
-    margin-left: 0;
-}
-
-.employer:last-child {
-    margin-right: 0;
-} */
 
 /*==========  Footer  ==========*/
 

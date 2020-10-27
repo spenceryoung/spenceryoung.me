@@ -20,9 +20,7 @@
             projectsArray: []
         },
         created: function() {
-            db.ref('projects').once('value', snapshot => {
-                this.projectsArray = snapshot.val()
-            })
+            db.ref('projects').once('value', snapshot => this.projectsArray = snapshot.val());
         }
     });
 
@@ -32,9 +30,17 @@
             employersArray: []
         },
         created: function(){
-            db.ref('employers').once('value', snapshot => {
-                this.employersArray= snapshot.val()
-            })
+            db.ref('employers').once('value', snapshot => this.employersArray= snapshot.val());
+        }
+    });
+
+    const technologies = new Vue({
+        el: '#technologiesContainer',
+        data: {
+            technologiesArray: []
+        },
+        created: function(){
+            db.ref('technologies').once('value', snapshot => this.technologiesArray= snapshot.val());
         }
     });
 })();
