@@ -12,35 +12,30 @@
     };
     let app = firebase.initializeApp(firebaseConfig);
     let db = app.database();
+    let projectsRef = db.ref("projects");
+    let employersRef = db.ref("employers"); 
+    let technologiesRef = db.ref("technologies");
     let analytics = firebase.analytics();
     
     const projects = new Vue({
-        el: "#projectContainer",
+        el: "#container",
         data: {
-            projectsArray: []
-        },
-        created: function() {
-            db.ref('projects').once('value', snapshot => this.projectsArray = snapshot.val());
-        }
-    });
-
-    const employers = new Vue({
-        el: '#experienceContainer',
-        data: {
-            employersArray: []
-        },
-        created: function(){
-            db.ref('employers').once('value', snapshot => this.employersArray= snapshot.val());
-        }
-    });
-
-    const technologies = new Vue({
-        el: '#technologiesContainer',
-        data: {
+            projectsArray: [],
+            employersArray: [],
             technologiesArray: []
         },
-        created: function(){
-            db.ref('technologies').once('value', snapshot => this.technologiesArray= snapshot.val());
+        created: function() {
+            projectsRef.once('value', snapshot => {
+                this.projectsArray = snapshot.val();            
+            });
+
+            employersRef.once('value', snapshot => {
+                this.employersArray = snapshot.val();            
+            });
+
+            technologiesRef.once('value', snapshot => {
+                this.technologiesArray = snapshot.val();            
+            });
         }
     });
 })();
