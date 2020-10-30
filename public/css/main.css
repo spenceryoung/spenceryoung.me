@@ -208,3 +208,33 @@ footer {
     right: 0;
     bottom: 0;
 }
+
+@media only screen and (max-width : 1200px) {
+    .employer {
+        width: 100%;
+    }
+
+    .employer:not(:first-child) {
+        margin-top: 25px;
+    }
+
+    .employer:not(:last-child) {
+        margin-bottom: 25px;
+    }
+}
+
+@media only screen and (max-width : 992px) {
+
+}
+
+@media only screen and (max-width : 768px) {
+
+}
+
+@media only screen and (max-width : 480px) {
+
+}
+
+@media only screen and (max-width : 320px) {
+
+}
