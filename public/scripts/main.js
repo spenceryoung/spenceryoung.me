@@ -12,9 +12,6 @@
     };
     let app = firebase.initializeApp(firebaseConfig);
     let db = app.database();
-    let projectsRef = db.ref("projects");
-    let employersRef = db.ref("employers"); 
-    let technologiesRef = db.ref("technologies");
     let analytics = firebase.analytics();
     
     const projects = new Vue({
@@ -25,15 +22,26 @@
             technologiesArray: []
         },
         created: function() {
-            projectsRef.once('value', snapshot => {
+            db.ref("projects").once('value', snapshot => {
                 this.projectsArray = snapshot.val();            
             });
 
-            employersRef.once('value', snapshot => {
-                this.employersArray = snapshot.val();            
+            db.ref("employers").once('value', snapshot => {
+                let tempArray = snapshot.val();
+                
+                for(let i = 0; i < tempArray.length; i ++) {
+                    tempArray[i].startdate = moment(tempArray[i].startdate).format("MMMM YYYY");
+                    if(tempArray[i].enddate != undefined) {
+                        tempArray[i].enddate = moment(tempArray[i].enddate).format("MMMM YYYY");
+                    }
+                    else {
+                        tempArray[i].enddate = "Present";
+                    }
+                }
+                this.employersArray = tempArray;
             });
 
-            technologiesRef.once('value', snapshot => {
+            db.ref("technologies").once('value', snapshot => {
                 this.technologiesArray = snapshot.val();            
             });
         }
