@@ -1,8 +1,5 @@
 (function() {
     particlesJS.load('backgroundParticles', 'assets/particles.json', function() {});
-    let nasaApiKey = "agT43fhfWhN0IPNgEOuZL16Q0ep7bf5faTeA5yBS";
-    let startDate = moment().format("YYYY-MM-DD");
-    let endDate = startDate;
     let firebaseConfig = {
         apiKey: "AIzaSyC-6HjAZWCKfFkrKq8Ch02XklzPVTzwwEI",
         authDomain: "portfolio-2cae0.firebaseapp.com",
@@ -16,6 +13,8 @@
     let app = firebase.initializeApp(firebaseConfig);
     let db = app.database();
     let analytics = firebase.analytics();
+    let startDate = moment().format("YYYY-MM-DD");
+    let endDate = startDate;
 
     const projects = new Vue({
         el: "#container",

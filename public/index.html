@@ -38,21 +38,21 @@
             </div>
         </div>
         <div class="card">
-            <h2 class="title">TECHNOLOGY USED IN THIS APP</h2>
-            <div id="technologiesContainer" class="row">
-                <div class="col" v-for="technology in technologiesArray">
-                    <div class="link-container">
-                        <a class="link" v-bind:href="technology.href" target="_blank">{{technology.technology}}</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
             <h2 class="title">OLD PORTFOLIO PROJECTS</h2>
             <div id="projectContainer" class="row">
                 <div class="col" v-for="project in projectsArray">
                     <div class="link-container">
                         <a class="link" v-bind:href="project.href" target="_blank">{{project.project}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h2 class="title">TECHNOLOGY USED IN THIS APP</h2>
+            <div id="technologiesContainer" class="row">
+                <div class="col" v-for="technology in technologiesArray">
+                    <div class="link-container">
+                        <a class="link" v-bind:href="technology.href" target="_blank">{{technology.technology}}</a>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script> 
     <script src="scripts/main.js"></script>
 </body>
