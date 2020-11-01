@@ -86,19 +86,20 @@ h1 {
 
 /*==========  Main Content  ==========*/
 
-.no-background-container {
-    padding-bottom: 50px;
-}
-
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #000;
 }
 
-.triangle-card {    
+.card {    
     position: relative;
     background-color: #fff;
     border-radius: 25px;
+    margin-top: 50px;
+}
+
+h2 {
+    border-bottom: 2px solid black;
 }
 
 .title {
@@ -159,8 +160,14 @@ body {
     border-radius: 25px;
 }
 
-#spaceContianer {
-    margin-top: 50px;
+#summary {
+    text-align: center;
+    padding: 0px 25px 25px 25px;
+}
+
+#summaryList {
+    padding-top: 25px;
+    list-style-position: inside;
 }
 
 /*==========  Footer  ==========*/
@@ -221,20 +228,4 @@ footer {
     .employer:not(:last-child) {
         margin-bottom: 25px;
     }
-}
-
-@media only screen and (max-width : 992px) {
-
-}
-
-@media only screen and (max-width : 768px) {
-
-}
-
-@media only screen and (max-width : 480px) {
-
-}
-
-@media only screen and (max-width : 320px) {
-
 }

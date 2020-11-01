@@ -15,8 +15,30 @@
         <header>
             <h1>SPENCER YOUNG</h1>
         </header>
-        <div class="triangle-card">
-            <h2 class="title">Technology Used In This App</h2>
+        <div class="card">
+            <h2 class="title">SUMMARY</h2>
+            <div id="summary">
+                <ul id="summaryList">
+                    <li v-for="summary in summaryItems">{{summary.item}}</li>
+                </ul>
+            </div>
+        </div>
+        <h5 class="title title-white">PROFESSIONAL EXPERIENCE</h5>
+        <div id="experienceContainer" class="row-container">
+            <div class="employer" v-for="employer in employersArray">
+                <p>
+                    <div class="link-container">
+                        <a class="link" v-bind:href="employer.href" target="_blank"><span>{{employer.employer}}</span></a>
+                    </div>
+                    <br><br>
+                    <span>{{employer.city}}</span><br>
+                    <span>{{employer.position}}</span><br>
+                    <span>{{employer.startdate}} - {{employer.enddate}}</span>
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <h2 class="title">TECHNOLOGY USED IN THIS APP</h2>
             <div id="technologiesContainer" class="row">
                 <div class="col" v-for="technology in technologiesArray">
                     <div class="link-container">
@@ -25,24 +47,8 @@
                 </div>
             </div>
         </div>
-        <div class="no-background-container">
-            <h5 class="title title-white">PROFESSIONAL EXPERIENCE</h5>
-            <div id="experienceContainer" class="row-container">
-                <div class="employer" v-for="employer in employersArray">
-                    <p>
-                        <div class="link-container">
-                            <a class="link" v-bind:href="employer.href" target="_blank"><span>{{employer.employer}}</span></a>
-                        </div>
-                        <br><br>
-                        <span>{{employer.city}}</span><br>
-                        <span>{{employer.position}}</span><br>
-                        <span>{{employer.startdate}} - {{employer.enddate}}</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="triangle-card">
-            <h2 class="title">OLD PROJECTS FROM SCHOOL</h2>
+        <div class="card">
+            <h2 class="title">OLD PORTFOLIO PROJECTS</h2>
             <div id="projectContainer" class="row">
                 <div class="col" v-for="project in projectsArray">
                     <div class="link-container">
