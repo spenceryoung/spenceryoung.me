@@ -16,8 +16,8 @@
     let startDate = moment().format("YYYY-MM-DD");
     let endDate = startDate;
 
-    const projects = new Vue({
-        el: "#container",
+    const vm = new Vue({
+        el: "#app",
         data: {
             projectsArray: [],
             employersArray: [],
@@ -28,7 +28,7 @@
             db.ref("projects").once('value', snapshot => {
                 this.projectsArray = snapshot.val();            
             });
-
+            
             db.ref("employers").once('value', snapshot => {
                 let tempArray = snapshot.val();
                 

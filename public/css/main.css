@@ -60,7 +60,7 @@ h1 {
     left: 0;
 }
 
-#container {
+#app {
     padding: 0 25px;
     max-width: 1200px;
     margin: auto;
@@ -161,13 +161,12 @@ h2 {
 }
 
 #summary {
-    text-align: center;
     padding: 0px 25px 25px 25px;
 }
 
 #summaryList {
+    margin-left: 17px;
     padding-top: 25px;
-    list-style-position: inside;
 }
 
 /*==========  Footer  ==========*/
