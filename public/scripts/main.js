@@ -29,6 +29,14 @@
         }
     });
 
+    Vue.component("social-media-link", {
+        template: "<a :href='link' target='_blank' :class='classString'></a>",
+        props: {
+            link: String, 
+            classString: String
+        }
+    });
+
     Vue.component("employer-section", {
         template: "#employerTemplate",
         props: {
@@ -47,7 +55,9 @@
             projectsArray: [],
             employersArray: [],
             technologiesArray: [],
-            summaryItems: []
+            summaryItems: [],
+            socialMediaLinks: [],
+            footerTag: ""
         },
         created: function() {
             db.ref("projects").once('value', snapshot => {
@@ -75,6 +85,11 @@
 
             db.ref("summary").once('value', snapshot => {
                 this.summaryItems = snapshot.val();            
+            });
+
+            db.ref("footerlinks").once('value', snapshot => {
+                this.socialMediaLinks = snapshot.val().socialmedialinks;
+                this.footerTag = snapshot.val().footertag.href;
             });
         }
     });

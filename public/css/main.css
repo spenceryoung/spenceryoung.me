@@ -204,6 +204,7 @@ footer {
 }
 
 .social-networking-links a {
+    text-decoration: none;
     color: #fff;
     padding-right: 25px;
     font-size: 18px;

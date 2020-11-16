@@ -54,11 +54,10 @@
         <footer>
             <div class="footer-container">
                 <div class="social-networking-links">
-                    <a href="//github.com/SpencerYoung" target="_blank"><i class="fa fa-github-alt"></i></a>
-                    <a href="//www.linkedin.com/pub/spencer-young/b2/877/228" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <social-media-link v-for="(sm, index) in socialMediaLinks" :key="index" :link="sm.href" :class="sm.classString"></social-media-link>
                 </div>
                 <div class="footer-tag">
-                    <a href="//github.com/spenceryoung/spenceryoung.me" target="_blank">source code</a>coded by Spencer Young
+                    <a :href="footerTag" target="_blank">source code</a>coded by Spencer Young
                 </div>
             </div>
         </footer>
