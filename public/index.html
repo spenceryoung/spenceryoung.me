@@ -25,25 +25,21 @@
         </div>
         <h5 class="title title-white">PROFESSIONAL EXPERIENCE</h5>
         <div id="experienceContainer" class="row-container">
-            <div class="employer" v-for="employer in employersArray">
-                <p>
-                    <div class="link-container">
-                        <a class="link" v-bind:href="employer.href" target="_blank"><span>{{employer.employer}}</span></a>
-                    </div>
-                    <br><br>
-                    <span>{{employer.city}}</span><br>
-                    <span>{{employer.position}}</span><br>
-                    <span>{{employer.startdate}} - {{employer.enddate}}</span>
-                </p>
-            </div>
+            <employer-section v-for="(employer, index) in employersArray"
+                :key="index" 
+                :href="employer.href" 
+                :employer="employer.employer" 
+                :city="employer.city"
+                :position="employer.position"
+                :startdate="employer.startdate"
+                :enddate="employer.enddate">
+            </employer-section>
         </div>
         <div class="card">
             <h2 class="title">OLD PORTFOLIO PROJECTS</h2>
             <div id="projectContainer" class="row">
                 <div class="col" v-for="project in projectsArray">
-                    <div class="link-container">
-                        <a class="link" v-bind:href="project.href" target="_blank">{{project.project}}</a>
-                    </div>
+                    <external-link :link="project.href" :text="project.project"></external-link>
                 </div>
             </div>
         </div>
@@ -51,9 +47,7 @@
             <h2 class="title">TECHNOLOGY USED IN THIS APP</h2>
             <div id="technologiesContainer" class="row">
                 <div class="col" v-for="technology in technologiesArray">
-                    <div class="link-container">
-                        <a class="link" v-bind:href="technology.href" target="_blank">{{technology.technology}}</a>
-                    </div>
+                    <external-link :link="technology.href" :text="technology.technology"></external-link>
                 </div>
             </div>
         </div>
@@ -69,6 +63,27 @@
             </div>
         </footer>
     </div>
+
+    <!-- Start Vue component templates -->
+    <script type="text/x-template" id="externalLinkTemplate"> 
+        <div class="link-container">
+            <a class="link" :href="link" target="_blank">{{text}}</a>
+        </div>
+    </script>
+
+    <script type="text/x-template" id="employerTemplate"> 
+        <div class="employer">
+            <div class="link-container">
+                <a class="link" :href="href" target="_blank"><span>{{employer}}</span></a>
+            </div>
+            <br><br>
+            <span>{{city}}</span><br>
+            <span>{{position}}</span><br>
+            <span>{{startdate}} - {{enddate}}</span>
+        </div>
+    </script>
+    <!-- End Vue component templates -->
+
     <script src="scripts/particles.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-database.js"></script>

@@ -21,6 +21,26 @@
     let startDate = moment().format("YYYY-MM-DD");
     let endDate = startDate;
 
+    Vue.component("external-link", {
+        template: "#externalLinkTemplate",
+        props: {
+            link: String, 
+            text: String
+        }
+    });
+
+    Vue.component("employer-section", {
+        template: "#employerTemplate",
+        props: {
+            href: String,
+            employer: String,
+            city: String,
+            position: String,
+            startdate: String,
+            enddate: String
+        }
+    });
+
     const vm = new Vue({
         el: "#app",
         data: {
