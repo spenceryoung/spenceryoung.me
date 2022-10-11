@@ -1,10 +1,6 @@
 (function() {
     particlesJS.load('backgroundParticles', 'assets/particles.json', function() {});
-    /*
-        Note: With Firebase, it's safe to expose the api key since access to all Firebase features (such as read and write access)
-        is determined by Firebase rules and authentication. It's actually necessary for the client to know. Since this is a simple project
-        that doesn't require database inserts or updates, all write access is denied. 
-    */  
+
     let firebaseConfig = {
         apiKey: "AIzaSyC-6HjAZWCKfFkrKq8Ch02XklzPVTzwwEI",
         authDomain: "portfolio-2cae0.firebaseapp.com",
